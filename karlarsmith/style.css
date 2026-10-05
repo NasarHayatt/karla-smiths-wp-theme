@@ -13,7 +13,7 @@ Text Domain: karlarsmith
 
 :root {
 	--krs-sans: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
-	--krs-gutter: 1.5rem;
+	--krs-gutter: max(1.5rem, 9.8vw, calc((100vw - 1140px) / 2));
 }
 
 html { scroll-behavior: smooth; }
@@ -333,4 +333,22 @@ h1.wp-block-heading { margin-bottom: 1.5rem; }
 @media (prefers-reduced-motion: reduce) {
 	*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 	.krs-js .krs-section > * { opacity: 1; transform: none; }
+}
+
+/* Match client reference: sizes, serif accents, spacing */
+p.is-style-lead, .krs-subhead, .wp-block-quote, .wp-block-quote p, .wp-block-quote cite { font-family: var(--wp--preset--font-family--serif); }
+p.is-style-lead { font-size: var(--wp--preset--font-size--lead); line-height: 1.5; }
+.krs-subhead { font-size: 1.2rem; line-height: 1.5; margin-bottom: 1.4rem; }
+.krs-hero--home p.is-style-lead { font-size: 2rem; line-height: 1.3; max-width: none; }
+.krs-hero { padding-top: 4.5rem; padding-bottom: 4rem; }
+.krs-section { padding-top: 5rem; padding-bottom: 5rem; }
+.krs-section > p:not(.is-style-eyebrow):not(.krs-fineprint) { padding-right: max(0px, calc(100% - 720px)); }
+.krs-section > p.is-style-lead, .krs-section > p.krs-subhead { padding-right: max(0px, calc(100% - 760px)); }
+.krs-hero--home .wp-block-column p.is-style-lead { padding-right: 0; }
+.krs-section .wp-block-column > p { padding-right: 0; }
+.krs-narrow > p, .krs-narrow > .wp-block-heading { padding-right: 0 !important; }
+.krs-hero h1.wp-block-heading { margin-bottom: 1.6rem; }
+.is-style-card h3 { font-size: 1.65rem; }
+@media (max-width: 781px) {
+	.krs-hero--home p.is-style-lead { font-size: 1.5rem; }
 }

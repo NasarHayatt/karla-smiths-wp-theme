@@ -25,7 +25,7 @@ const h = (level, text, className, raw = false) => {
   const a = {};
   if (level !== 2) a.level = level;
   if (className) a.className = className;
-  return blk('heading', a, `<h${level} class="${cls('wp-block-heading', className)}">${raw ? text : esc(text)}</h${level}>`);
+  return blk('heading', a, `<h${level} class="${cls('wp-block-heading', className)}">${raw ? text : esc(text).replace(/&lt;br&gt;/g, '<br>')}</h${level}>`);
 };
 const quote = (text, citation) =>
   blk('quote', {}, `<blockquote class="wp-block-quote">${p(text)}${citation ? `<cite>${esc(citation)}</cite>` : ''}</blockquote>`);
@@ -159,7 +159,7 @@ write('page-home.php', {
 write('page-about.php', { title: 'About page', slug: 'page-about', desc: 'Full About page.' }, [
   section([
     eyebrow('ABOUT KARLA'),
-    h(1, 'Teacher. Builder. Spiritual Mother. Equipper.'),
+    h(1, 'Teacher. Builder.<br>Spiritual Mother. Equipper.'),
     p('<strong>Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</strong>', 'krs-subhead', true),
     lead('Karla R. Smith is an ordained minister, Bible teacher, equipper of believers, mentor of leaders, and prophetic voice with a heart to see people know Jesus Christ, hear the voice of the Holy Spirit, walk in His truth, and experience the freedom found in Him.'),
   ].join('\n'), 'krs-hero'),
@@ -234,7 +234,7 @@ write('page-speak.php', {
   title: 'Speak page', slug: 'page-speak', desc: 'Full Speak page with inquiry form.',
   todo: ['Speak form: message field and submit button are reasonable completions; her screenshot cut off after Phone (optional). Confirm the full field list.'],
 }, [
-  hero('INVITE KARLA', 'Truth. Freedom. Spiritual growth. Purpose.', 'Karla is available for appropriate churches, ministries, conferences, retreats, leadership gatherings, interviews, podcasts, and other speaking opportunities.'),
+  hero('INVITE KARLA', 'Truth. Freedom.<br>Spiritual growth. Purpose.', 'Karla is available for appropriate churches, ministries, conferences, retreats, leadership gatherings, interviews, podcasts, and other speaking opportunities.'),
   section(columns([
     column([
       h(2, 'Areas of teaching.'),
