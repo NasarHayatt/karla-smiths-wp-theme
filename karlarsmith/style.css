@@ -252,3 +252,11 @@ h1.wp-block-heading { margin-bottom: 1.5rem; }
 .krs-copyright { font-family: var(--krs-sans); font-size: 0.85rem; margin: 0; }
 .krs-footer-legal { font-size: 0.85rem; gap: 1.25rem; }
 .krs-footer-legal .wp-block-navigation__container { gap: 1.25rem; }
+
+/* Photo dropped inside the arch placeholder: fill the arch and hide the caption */
+.krs-arch:has(.wp-block-image) { padding: 0; overflow: hidden; }
+.krs-arch:has(.wp-block-image) .krs-arch__caption { display: none; }
+.krs-arch > .wp-block-image { position: absolute; inset: 0; margin: 0; max-width: none; width: 100%; height: 100%; }
+.krs-arch > .wp-block-image img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border-radius: inherit; box-shadow: none; }
+.krs-arch > .wp-block-image::after { display: none; }
+.krs-arch:has(.wp-block-image)::after { z-index: 2; }
