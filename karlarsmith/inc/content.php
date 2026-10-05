@@ -59,7 +59,7 @@ add_filter( 'render_block_data', function ( $block ) {
 // One-time refresh of the starter pages to the current patterns (adds missing pages too).
 // Only pages that still carry the theme's own markup (krs-section) are replaced.
 add_action( 'admin_init', function () {
-	$version = 5;
+	$version = 6;
 	if ( (int) get_option( 'krs_content_version' ) >= $version || ! current_user_can( 'manage_options' ) ) {
 		return;
 	}

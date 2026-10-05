@@ -252,6 +252,8 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
+<!-- wp:group {"className":"krs-subscribe-card","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-subscribe-card">
 <!-- wp:columns {"className":"krs-two-col"} -->
 <div class="wp-block-columns krs-two-col">
 <!-- wp:column -->
@@ -276,5 +278,7 @@
 <!-- /wp:column -->
 </div>
 <!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
