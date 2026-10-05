@@ -31,3 +31,12 @@ add_filter( 'query_loop_block_query_vars', function ( $query ) {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_style( 'karlarsmith', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
 } );
+
+// Motion: marks the page as JS-capable early (so reveal styles apply), then loads the small script.
+add_action( 'wp_head', function () {
+	echo "<script>document.documentElement.classList.add('krs-js');</script>\n";
+}, 1 );
+
+add_action( 'wp_enqueue_scripts', function () {
+	wp_enqueue_script( 'karlarsmith-theme', get_theme_file_uri( 'assets/js/theme.js' ), array(), filemtime( get_theme_file_path( 'assets/js/theme.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
+} );

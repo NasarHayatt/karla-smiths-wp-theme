@@ -3,8 +3,8 @@ defined( 'ABSPATH' ) || exit;
 
 add_action( 'init', function () {
 	$common = array(
-		'public'              => false,
-		'publicly_queryable'  => false,
+		'public'              => true,
+		'publicly_queryable'  => true,
 		'show_ui'             => true,
 		'show_in_menu'        => true,
 		'show_in_rest'        => true,
@@ -52,12 +52,31 @@ add_action( 'init', function () {
 			'name'          => __( 'Book Status', 'karlarsmith' ),
 			'singular_name' => __( 'Book Status', 'karlarsmith' ),
 		),
-		'public'             => false,
-		'publicly_queryable' => false,
+		'public'             => true,
+		'publicly_queryable' => true,
 		'show_ui'            => true,
 		'show_in_rest'       => true,
 		'show_admin_column'  => true,
 		'hierarchical'       => true,
 		'rewrite'            => false,
 	) );
+} );
+
+// These types are viewable only so the block editor's Query Loop keeps them selected.
+// They have no public pages: single URLs go to the home page and sitemaps skip them.
+add_action( 'template_redirect', function () {
+	if ( is_singular( array( 'krs_book', 'krs_topic', 'krs_resource' ) ) || is_tax( 'krs_book_status' ) ) {
+		wp_safe_redirect( home_url( '/' ), 301 );
+		exit;
+	}
+} );
+
+add_filter( 'wp_sitemaps_post_types', function ( $types ) {
+	unset( $types['krs_book'], $types['krs_topic'], $types['krs_resource'] );
+	return $types;
+} );
+
+add_filter( 'wp_sitemaps_taxonomies', function ( $taxes ) {
+	unset( $taxes['krs_book_status'] );
+	return $taxes;
 } );

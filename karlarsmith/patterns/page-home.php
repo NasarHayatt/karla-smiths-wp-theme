@@ -8,7 +8,7 @@
  */
 /*
  * TODO(client): Hero tagline: the long version (her latest written instruction) is used. Her reference screenshot shows the short version "Know Jesus. Hear the Holy Spirit. Walk in His Truth." Confirm which she wants.
- * TODO(client): Below-the-hero photos and pathway-card images were not supplied; photo placeholders are used and pathway cards are text only.
+ * TODO(client): Below-the-hero photos and pathway-card images were not supplied; those sections are text only until she sends photos.
  * TODO(client): Stay Connected form has no mailing-list service wired; submissions are emailed to the site admin.
  */
 ?>
@@ -45,13 +45,7 @@
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center","width":"42%"} -->
 <div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%">
-<!-- wp:group {"className":"krs-arch is-style-arch","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-arch is-style-arch">
-<!-- wp:paragraph {"className":"krs-arch__caption"} -->
-<p class="krs-arch__caption">Place hero portrait here</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
+<?php echo krs_arch_block(); ?>
 </div>
 <!-- /wp:column -->
 </div>
@@ -61,10 +55,6 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
-<!-- wp:columns {"verticalAlignment":"center"} -->
-<div class="wp-block-columns are-vertically-aligned-center">
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">A Place to Grow</p>
 <!-- /wp:paragraph -->
@@ -82,21 +72,6 @@
 <p>"And you shall know the truth, and the truth shall make you free."</p>
 <!-- /wp:paragraph --><cite>John 8:32</cite></blockquote>
 <!-- /wp:quote -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
-<!-- wp:group {"className":"krs-photo-placeholder","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-photo-placeholder">
-<!-- wp:paragraph {"className":"krs-arch__caption"} -->
-<p class="krs-arch__caption">Place photo here</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
 
@@ -168,21 +143,6 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
-<!-- wp:columns {"verticalAlignment":"center"} -->
-<div class="wp-block-columns are-vertically-aligned-center">
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
-<!-- wp:group {"className":"krs-photo-placeholder","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-photo-placeholder">
-<!-- wp:paragraph {"className":"krs-arch__caption"} -->
-<p class="krs-arch__caption">Place photo here</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">The Heart Behind the Call</p>
 <!-- /wp:paragraph -->
@@ -200,10 +160,6 @@
 <div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/about/">Read Karla's Story</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
-</div>
-<!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
 

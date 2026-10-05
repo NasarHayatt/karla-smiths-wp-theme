@@ -30,13 +30,7 @@
 <div class="wp-block-columns are-vertically-aligned-center">
 <!-- wp:column {"verticalAlignment":"center"} -->
 <div class="wp-block-column is-vertically-aligned-center">
-<!-- wp:group {"className":"krs-arch is-style-arch","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-arch is-style-arch">
-<!-- wp:paragraph {"className":"krs-arch__caption"} -->
-<p class="krs-arch__caption">Place about portrait here</p>
-<!-- /wp:paragraph -->
-</div>
-<!-- /wp:group -->
+<?php echo krs_arch_block(); ?>
 </div>
 <!-- /wp:column -->
 <!-- wp:column {"verticalAlignment":"center"} -->

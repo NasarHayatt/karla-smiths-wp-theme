@@ -260,3 +260,77 @@ h1.wp-block-heading { margin-bottom: 1.5rem; }
 .krs-arch > .wp-block-image img { width: 100%; height: 100%; aspect-ratio: auto; object-fit: cover; border-radius: inherit; box-shadow: none; }
 .krs-arch > .wp-block-image::after { display: none; }
 .krs-arch:has(.wp-block-image)::after { z-index: 2; }
+
+/* Layout fixes: keep lead and body text left aligned inside the container */
+.krs-section > p, .krs-section > .wp-block-buttons { box-sizing: border-box; }
+.krs-section > p:not(.is-style-eyebrow):not(.krs-fineprint) { padding-right: clamp(0px, 22%, 260px); }
+.krs-section > p.is-style-lead, .krs-section > p.krs-subhead { max-width: var(--wp--style--global--content-size); padding-right: clamp(0px, 24%, 280px); }
+.krs-narrow > p { padding-right: 0 !important; }
+
+/* Motion */
+.wp-block-button__link, .wpcf7 .krs-submit input[type="submit"], .is-style-card, .krs-card-link a,
+.krs-header, .krs-nav a, .krs-footer-nav a, .wpcf7 input, .wpcf7 textarea {
+	transition: transform 0.28s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.28s ease, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease;
+}
+.wp-block-button__link:hover, .wpcf7 .krs-submit input[type="submit"]:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 10px 22px rgba(23, 21, 15, 0.18);
+}
+.wp-block-button__link:active, .wpcf7 .krs-submit input[type="submit"]:active { transform: translateY(0); box-shadow: none; }
+.wp-block-button:not(.is-style-outline) .wp-block-button__link:hover, .wpcf7 .krs-submit input[type="submit"]:hover {
+	background: #3d4d35;
+}
+.wp-block-button.is-style-outline > .wp-block-button__link.wp-element-button:hover {
+	background: var(--wp--preset--color--outline-ink);
+	color: var(--wp--preset--color--button-text);
+}
+.wp-block-button__link:focus-visible, .krs-nav a:focus-visible, .krs-footer-nav a:focus-visible {
+	outline: 2px solid var(--wp--preset--color--button);
+	outline-offset: 3px;
+}
+.is-style-card:hover { transform: translateY(-6px); box-shadow: 0 22px 48px rgba(23, 21, 15, 0.13); }
+.krs-card-link a { display: inline-block; }
+.krs-card-link a:hover { transform: translateX(4px); }
+
+/* Animated underline on nav links */
+.krs-nav .wp-block-navigation-item__content, .krs-footer-nav .wp-block-navigation-item__content {
+	background: linear-gradient(currentColor, currentColor) 0 100% / 0 1px no-repeat;
+	transition: background-size 0.3s ease;
+	padding-bottom: 0.2rem;
+}
+.krs-nav .wp-block-navigation-item__content:hover, .krs-footer-nav .wp-block-navigation-item__content:hover { background-size: 100% 1px; }
+
+.krs-header.is-scrolled { box-shadow: 0 6px 24px rgba(23, 21, 15, 0.08); }
+.wpcf7 input:hover, .wpcf7 textarea:hover { border-color: var(--wp--preset--color--ink); }
+
+/* Photo: slow zoom inside the arch on hover */
+.wp-block-image.is-style-arch { overflow: hidden; border-radius: 999px 999px 0 0; }
+.wp-block-image.is-style-arch img { transition: transform 0.9s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.wp-block-image.is-style-arch:hover img { transform: scale(1.04); }
+
+/* Scroll reveal (only when JS is running) */
+.krs-js .krs-section > * { opacity: 0; transform: translateY(26px); }
+.krs-js .krs-section > .is-in {
+	opacity: 1;
+	transform: none;
+	transition: opacity 0.8s ease, transform 0.8s cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+.krs-js .krs-section > .is-in:nth-child(2) { transition-delay: 0.08s; }
+.krs-js .krs-section > .is-in:nth-child(3) { transition-delay: 0.16s; }
+.krs-js .krs-section > .is-in:nth-child(4) { transition-delay: 0.24s; }
+
+/* Card grids stagger in */
+@keyframes krs-rise { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: none; } }
+.krs-js .krs-cards .wp-block-column, .krs-js .krs-topics .wp-block-post, .krs-js .krs-books .wp-block-post, .krs-js .krs-resources .wp-block-post {
+	animation: krs-rise 0.8s cubic-bezier(0.2, 0.7, 0.2, 1) both;
+	animation-timeline: view();
+	animation-range: entry 0% entry 45%;
+}
+@supports not (animation-timeline: view()) {
+	.krs-js .krs-cards .wp-block-column, .krs-js .krs-topics .wp-block-post, .krs-js .krs-books .wp-block-post, .krs-js .krs-resources .wp-block-post { animation: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+	*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+	.krs-js .krs-section > * { opacity: 1; transform: none; }
+}

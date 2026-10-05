@@ -59,10 +59,7 @@ const columns = (cols, { className, align } = {}) => {
 const form = (name) => `<!-- wp:shortcode -->\n[krs_form form="${name}"]\n<!-- /wp:shortcode -->`;
 
 // Reusable components
-const arch = (caption) =>
-  group(p(caption, 'krs-arch__caption'), { className: 'krs-arch is-style-arch', layout: { type: 'constrained' } });
-const photo = (caption = 'Place photo here') =>
-  group(p(caption, 'krs-arch__caption'), { className: 'krs-photo-placeholder', layout: { type: 'constrained' } });
+const arch = () => '<?php echo krs_arch_block(); ?>';
 const section = (inner, extra) => group(inner, { className: cls('krs-section', extra) });
 const hero = (eyebrowText, title, leadText) =>
   section([eyebrow(eyebrowText), h(1, title), lead(leadText)].join('\n'), 'krs-hero');
@@ -90,18 +87,15 @@ const write = (file, meta, content) => writeFileSync(join(root, file), pageHeade
 
 // Components
 write('arch-portrait.php',
-  { title: 'Arch portrait', slug: 'arch-portrait', desc: 'Arch-shaped portrait placeholder. To use a photo, add an Image block and choose the Arch block style.' },
-  arch('Place portrait here'));
-write('photo-placeholder.php',
-  { title: 'Photo placeholder', slug: 'photo-placeholder', desc: 'Rounded photo placeholder. Replace with an Image block.' },
-  photo());
+  { title: 'Arch portrait', slug: 'arch-portrait', desc: 'Arch-shaped portrait using the site portrait photo (Image block, Arch style).' },
+  arch());
 
 // Home
 write('page-home.php', {
   title: 'Home page', slug: 'page-home', desc: 'Full Home page.',
   todo: [
     'Hero tagline: the long version (her latest written instruction) is used. Her reference screenshot shows the short version "Know Jesus. Hear the Holy Spirit. Walk in His Truth." Confirm which she wants.',
-    'Below-the-hero photos and pathway-card images were not supplied; photo placeholders are used and pathway cards are text only.',
+    'Below-the-hero photos and pathway-card images were not supplied; those sections are text only until she sends photos.',
     'Stay Connected form has no mailing-list service wired; submissions are emailed to the site admin.',
   ],
 }, [
@@ -114,19 +108,16 @@ write('page-home.php', {
       p("I'm a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life."),
       buttons([{ text: 'Explore the Teaching', url: '/teach/' }, { text: 'About Karla', url: '/about/', outline: true }]),
     ].join('\n'), { width: '58%', align: 'center' }),
-    column(arch('Place hero portrait here'), { width: '42%', align: 'center' }),
+    column(arch(), { width: '42%', align: 'center' }),
   ], { align: 'center' }), 'krs-hero krs-hero--home'),
 
-  section(columns([
-    column([
+  section([
       eyebrow('A Place to Grow'),
       h(2, "Let's walk in truth together."),
       p('I believe God\'s Word is not simply something we study, it is truth we receive, live, and allow to transform us.'),
       p('Whether you are growing in your relationship with Jesus, learning to recognize the voice of the Holy Spirit, seeking freedom, or stepping more fully into your purpose, my prayer is that what you find here will encourage you, strengthen you, and point you back to Christ.'),
       quote('"And you shall know the truth, and the truth shall make you free."', 'John 8:32'),
-    ].join('\n'), { align: 'center' }),
-    column(photo('Place photo here'), { align: 'center' }),
-  ], { align: 'center' })),
+  ].join('\n')),
 
   section([
     eyebrow('Come Along'),
@@ -138,16 +129,13 @@ write('page-home.php', {
     ].map((c) => c), { className: 'krs-cards' }),
   ].join('\n')),
 
-  section(columns([
-    column(photo('Place photo here'), { align: 'center' }),
-    column([
+  section([
       eyebrow('The Heart Behind the Call'),
       h(2, 'Truth spoken in love. Freedom found in Christ.'),
       p('I have a deep love for people and a particular burden for those who feel bound, fearful, wounded, discouraged, or hindered from becoming who God has called them to be.', 'is-style-lead'),
       p('My desire is always to point people to Jesus Christ, the One who sets us free. Through biblical teaching, prophetic insight, prayer, writing, encouragement, and Spirit-led ministry, I want to help people recognize truth, respond to the Holy Spirit, grow in maturity, and move forward with hope, obedience, and purpose.'),
       buttons([{ text: "Read Karla's Story", url: '/about/' }]),
-    ].join('\n'), { align: 'center' }),
-  ], { align: 'center' })),
+  ].join('\n')),
 
   section([
     eyebrow('Fired-Up! Leaders'),
@@ -177,7 +165,7 @@ write('page-about.php', { title: 'About page', slug: 'page-about', desc: 'Full A
   ].join('\n'), 'krs-hero'),
 
   section(columns([
-    column(arch('Place about portrait here'), { align: 'center' }),
+    column(arch(), { align: 'center' }),
     column([
       eyebrow('Her Ministry'),
       h(2, 'A life of teaching, equipping & service.'),
