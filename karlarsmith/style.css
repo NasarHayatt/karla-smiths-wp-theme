@@ -310,3 +310,9 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 	*, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
 	.krs-js .krs-section > *, .krs-js .krs-page-hero > *, .krs-js .krs-home-hero .wp-block-column > * { opacity: 1; transform: none; }
 }
+
+/* Narrow text blocks stay left-aligned with the container edge (WordPress would otherwise centre them) */
+.krs-section > .is-style-lead, .krs-page-hero > .is-style-lead, .krs-section > .krs-copy, .krs-section > .krs-fineprint, .krs-narrow > * {
+	margin-left: max(0px, calc((100% - 1180px) / 2)) !important;
+	margin-right: auto !important;
+}
