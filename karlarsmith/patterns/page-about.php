@@ -13,7 +13,7 @@
 <p class="is-style-eyebrow">ABOUT KARLA</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Teacher. Builder.&lt;br>Spiritual Mother. Equipper.</h1>
+<h1 class="wp-block-heading">Teacher. Builder.<br>Spiritual Mother. Equipper.</h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"className":"krs-subhead"} -->
 <p class="krs-subhead"><strong>Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</strong></p>

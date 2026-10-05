@@ -16,7 +16,7 @@
 <p class="is-style-eyebrow">INVITE KARLA</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Truth. Freedom.&lt;br>Spiritual growth. Purpose.</h1>
+<h1 class="wp-block-heading">Truth. Freedom.<br>Spiritual growth. Purpose.</h1>
 <!-- /wp:heading -->
 <!-- wp:paragraph {"className":"is-style-lead"} -->
 <p class="is-style-lead">Karla is available for appropriate churches, ministries, conferences, retreats, leadership gatherings, interviews, podcasts, and other speaking opportunities.</p>

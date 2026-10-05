@@ -25,7 +25,7 @@ const h = (level, text, className, raw = false) => {
   const a = {};
   if (level !== 2) a.level = level;
   if (className) a.className = className;
-  return blk('heading', a, `<h${level} class="${cls('wp-block-heading', className)}">${raw ? text : esc(text).replace(/&lt;br&gt;/g, '<br>')}</h${level}>`);
+  return blk('heading', a, `<h${level} class="${cls('wp-block-heading', className)}">${raw ? text : esc(text).replace(/&lt;br>/g, '<br>')}</h${level}>`);
 };
 const quote = (text, citation) =>
   blk('quote', {}, `<blockquote class="wp-block-quote">${p(text)}${citation ? `<cite>${esc(citation)}</cite>` : ''}</blockquote>`);
