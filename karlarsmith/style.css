@@ -471,3 +471,16 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 
 @keyframes krs-menu-in { from { opacity: 0; transform: translateX(-22px); } to { opacity: 1; transform: none; } }
 @keyframes krs-menu-fade { from { opacity: 0; } to { opacity: 1; } }
+
+/* Mobile menu: calmer size and more breathing room */
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content { padding: 128px 28px 48px !important; }
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content.wp-block-navigation-item__content {
+	font-size: 1.35rem !important;
+	font-weight: 700;
+	padding: 22px 0 !important;
+	line-height: 1.2;
+}
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content.wp-block-navigation-item__content:hover,
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content.wp-block-navigation-item__content:focus-visible { padding-left: 8px !important; }
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content::after { font-size: 1.1rem; }
+.wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content::before { top: 40px; }
