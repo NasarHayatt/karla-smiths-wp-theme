@@ -26,3 +26,8 @@ add_filter( 'query_loop_block_query_vars', function ( $query ) {
 	}
 	return $query;
 } );
+
+// Block themes do not load style.css by themselves.
+add_action( 'wp_enqueue_scripts', function () {
+	wp_enqueue_style( 'karlarsmith', get_stylesheet_uri(), array(), filemtime( get_stylesheet_directory() . '/style.css' ) );
+} );
