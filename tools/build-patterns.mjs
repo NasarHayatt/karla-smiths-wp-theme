@@ -291,4 +291,80 @@ write('page-support.php', {
   ].join('\n')),
 ].join('\n\n'));
 
+// Legal pages (draft text written from what the site actually does; attorney review recommended)
+const ul = (items) => blk('list', {}, `<ul class="wp-block-list">${items.map((t) => blk('list-item', {}, `<li>${esc(t)}</li>`)).join('\n')}</ul>`);
+const legalPage = (file, slug, title, titleText, leadText, body, todo) =>
+  write(file, { title, slug, desc: titleText + ' page.', todo }, [
+    pageHero(eyebrow('Legal'), h(1, titleText), lead(leadText)),
+    section(body.join('\n'), 'krs-narrow krs-legal'),
+  ].join('\n\n'));
+const contactLine = (what) => p(`Questions about ${what} can be sent through the <a href="/connect/">Connect page</a>.`, '', true);
+
+legalPage('page-privacy.php', 'page-privacy', 'Privacy Policy page', 'Privacy Policy',
+  'How KarlaRSmith.com handles the information you share with us.', [
+  p('Last updated: October 5, 2026', 'krs-fineprint'),
+  h(2, 'Who we are'),
+  p('KarlaRSmith.com is the personal website of Karla R. Smith, a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. Fired-Up! Leaders is a separate organizational ministry founded by Marvin and Karla Smith and is not operated through this website.'),
+  h(2, 'Information we collect'),
+  p('We collect only what you choose to send us through the forms on this site:'),
+  ul([
+    'Connect form: your name, email address, subject, and message.',
+    'Speaking inquiry form: your name, organization or ministry, email address, optional phone number, event name, date, location, type of event, and a description of your event.',
+    'Stay Connected form: your first name and email address.',
+  ]),
+  p('Like most websites, our hosting provider may automatically record technical information such as your IP address, browser type, and the pages you visit, for security and to keep the site running.'),
+  h(2, 'Cookies'),
+  p('This website uses only the cookies needed for it to work, such as those WordPress and its form tools use for security and spam protection. We do not currently use advertising or marketing cookies. If analytics or similar tools are added in the future, this policy will be updated.'),
+  h(2, 'How we use your information'),
+  ul([
+    'To respond to your message or inquiry.',
+    'To consider and arrange speaking, teaching, and ministry opportunities.',
+    'To send occasional teachings, reflections, resources, and ministry updates if you ask to stay connected.',
+    'To protect the site from spam and misuse.',
+  ]),
+  h(2, 'Sharing your information'),
+  p('We do not sell or rent your personal information. We may share it only with the service providers who help run this website, such as hosting and email delivery, and only as needed for them to do so. We may also disclose information if the law requires it.'),
+  h(2, 'Email updates'),
+  p('If you sign up through Stay Connected, we will use your email address to send occasional updates. You can ask to be removed at any time by contacting us, and updates will include a way to unsubscribe.'),
+  h(2, 'Giving and links to other sites'),
+  p('This website does not collect payments or financial information. The Support the Work page directs you to Fired-Up! Leaders, a 501(c)(3) nonprofit ministry, which receives contributions through its own giving method and is responsible for its own privacy practices. This site may also link to other websites that we do not control.'),
+  h(2, 'Keeping your information'),
+  p('We keep messages and inquiries only as long as needed to respond and to keep reasonable records. We take sensible steps to protect your information, but no website or email can be guaranteed completely secure.'),
+  h(2, 'Children'),
+  p('This website is intended for adults and is not directed to children under 13. We do not knowingly collect information from children.'),
+  h(2, 'Your choices'),
+  p('You may ask what information we hold about you, ask us to correct or delete it, or ask to stop receiving updates by writing to us through the Connect page.'),
+  h(2, 'Changes to this policy'),
+  p('We may update this policy from time to time. The date at the top shows when it was last changed.'),
+  h(2, 'Contact'),
+  contactLine('this policy'),
+], [
+  'Draft written from the site as built (forms, no payments, no analytics, no ad cookies). Confirm those facts, add a contact email if wanted, and have it reviewed before launch.',
+]);
+
+legalPage('page-terms.php', 'page-terms', 'Terms page', 'Terms',
+  'The terms for using KarlaRSmith.com.', [
+  p('Last updated: October 5, 2026', 'krs-fineprint'),
+  h(2, 'Using this website'),
+  p('By using KarlaRSmith.com you agree to these terms. If you do not agree, please do not use the site.'),
+  h(2, 'Purpose of the content'),
+  p('The teaching, writing, and resources on this site are offered for biblical encouragement, education, and spiritual growth. They are not a substitute for professional medical, legal, financial, or mental health advice or care. Please seek qualified help for those needs.'),
+  h(2, 'Ownership and permitted use'),
+  p('Unless noted otherwise, the content on this site, including text, teaching, design, and images, belongs to Karla R. Smith and is protected by copyright. You may read, share a link to, and quote short portions of it for personal, non-commercial use with clear credit to Karla R. Smith and a link back to the site. Please ask before reproducing, republishing, or selling any of it. Scripture quotations remain the property of their respective publishers.'),
+  h(2, 'Messages and forms'),
+  p("When you use the forms on this site, please give accurate information and do not send unlawful, harmful, or abusive content, or spam. Sending a message does not create a ministry, counseling, or professional relationship. Speaking and teaching invitations are considered at Karla's discretion and are not confirmed until agreed with you directly."),
+  h(2, 'Giving'),
+  p('Contributions are made to and received by Fired-Up! Leaders, a 501(c)(3) nonprofit ministry, through its own giving method. This website does not process donations.'),
+  h(2, 'Links to other sites'),
+  p('This site may link to other websites, including Fired-Up! Leaders. We do not control those sites and are not responsible for their content or practices.'),
+  h(2, 'No warranties and limits of liability'),
+  p('This website and its content are provided as is, without promises that they will be uninterrupted, error free, or suited to your particular needs. To the fullest extent the law allows, Karla R. Smith is not liable for any loss or damage arising from your use of the site or reliance on its content.'),
+  h(2, 'Changes'),
+  p('We may update these terms from time to time. Continued use of the site after a change means you accept the updated terms.'),
+  h(2, 'Contact'),
+  contactLine('these terms'),
+], [
+  'Draft written for a ministry website. Add the governing state and any other details with an attorney before launch.',
+]);
+
 console.log('patterns written to', root);

@@ -505,3 +505,14 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 }
 .krs-footer .wp-block-site-logo { margin: 0 0 14px; }
 .krs-footer .wp-block-site-logo:has(img) ~ .wp-block-site-title { display: none; }
+
+/* Legal pages */
+.krs-legal h2 { font-size: 1.7rem; margin: 2.4rem 0 0.6rem; }
+.krs-legal p, .krs-legal li { color: #514944; }
+.krs-legal ul { margin: 0.8rem 0 1rem; padding-left: 1.3rem; }
+.krs-legal li { margin: 0.35rem 0; }
+.krs-legal a { text-decoration: underline; text-underline-offset: 3px; }
+
+/* Footer always sits at the bottom of the screen on short pages */
+.wp-site-blocks { min-height: 100vh; display: flex; flex-direction: column; }
+.wp-site-blocks > main { flex: 1 0 auto; }

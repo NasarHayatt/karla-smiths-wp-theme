@@ -63,6 +63,6 @@ Search the patterns for `TODO(client)` to find these in code:
 3. Support the Work button points to https://firedupleaders.org until the real giving URL is supplied.
 4. Stay Connected form emails the admin; no mailing-list service is connected.
 5. Recipient address for form email (Contact Form 7 > each form > Mail).
-6. Privacy Policy and Terms pages are empty drafts, so their footer links return 404 until real text exists.
+6. Privacy Policy and Terms are published with drafted text based on what the site does (forms, no payments, no analytics). Confirm the facts and have an attorney review before launch.
 7. Connect and Support the Work page layouts are not in her files; they reuse the same components.
 8. No photos beyond the portrait were supplied, so other sections are text only.

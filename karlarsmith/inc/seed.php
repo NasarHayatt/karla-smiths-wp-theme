@@ -42,10 +42,13 @@ function krs_seed_pages() {
 			'menu_order'   => $i,
 		) );
 	}
-	// Privacy Policy and Terms stay drafts until the client supplies real text.
-	foreach ( array( array( 'privacy-policy', 'Privacy Policy' ), array( 'terms', 'Terms' ) ) as $legal ) {
-		if ( ! get_page_by_path( $legal[0] ) ) {
-			wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'draft', 'post_name' => $legal[0], 'post_title' => $legal[1] ) );
+	// Privacy Policy and Terms: published with the drafted text; empty existing drafts are filled in.
+	foreach ( array( array( 'privacy-policy', 'Privacy Policy', 'page-privacy' ), array( 'terms', 'Terms', 'page-terms' ) ) as $legal ) {
+		$existing = get_page_by_path( $legal[0] );
+		if ( ! $existing ) {
+			wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'publish', 'post_name' => $legal[0], 'post_title' => $legal[1], 'post_content' => wp_slash( krs_pattern_markup( $legal[2] ) ) ) );
+		} elseif ( '' === trim( $existing->post_content ) ) {
+			wp_update_post( array( 'ID' => $existing->ID, 'post_status' => 'publish', 'post_content' => wp_slash( krs_pattern_markup( $legal[2] ) ) ) );
 		}
 	}
 	if ( ! empty( $ids['home'] ) && ! is_wp_error( $ids['home'] ) && 'page' !== get_option( 'show_on_front' ) ) {
