@@ -41,3 +41,12 @@ add_action( 'wp_head', function () {
 add_action( 'wp_enqueue_scripts', function () {
 	wp_enqueue_script( 'karlarsmith-theme', get_theme_file_uri( 'assets/js/theme.js' ), array(), filemtime( get_theme_file_path( 'assets/js/theme.js' ) ), array( 'in_footer' => true, 'strategy' => 'defer' ) );
 } );
+
+// The header menu always collapses into the mobile (hamburger) menu on small screens,
+// even if the Site Editor copy of the header was saved with a different setting.
+add_filter( 'render_block_data', function ( $block ) {
+	if ( 'core/navigation' === $block['blockName'] && ! empty( $block['attrs']['className'] ) && false !== strpos( $block['attrs']['className'], 'krs-nav' ) ) {
+		$block['attrs']['overlayMenu'] = 'mobile';
+	}
+	return $block;
+} );
