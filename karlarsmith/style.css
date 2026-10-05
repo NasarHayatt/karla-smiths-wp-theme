@@ -36,8 +36,7 @@ img { max-width: 100%; height: auto; }
 	position: sticky;
 	top: 0;
 	z-index: 50;
-	background: rgba(255, 253, 249, 0.96);
-	backdrop-filter: blur(10px);
+	background: transparent;
 	border-bottom: 1px solid rgba(47, 57, 39, 0.1);
 	padding: 0 var(--krs-gutter);
 }
@@ -336,3 +335,15 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 	.krs-home-hero { padding-top: 56px; padding-bottom: 56px; }
 	.is-style-card, .krs-pathway { padding: 28px 24px; }
 }
+
+/* Header background and blur live on a layer so the full-screen mobile menu is not clipped by the header */
+.krs-header::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background: rgba(255, 253, 249, 0.96);
+	-webkit-backdrop-filter: blur(10px);
+	backdrop-filter: blur(10px);
+}
+.wp-block-navigation__responsive-container.is-menu-open { z-index: 100000; }
