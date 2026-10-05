@@ -138,10 +138,12 @@ write('page-home.php', {
     ), buttons([{ text: 'Visit Fired-Up! Leaders', url: 'https://firedupleaders.org', style: 'light' }])].join('\n'),
   ), 'krs-section--dark'),
 
-  section(twoCol(
-    [eyebrow('Stay Connected'), h(2, "I'd love to stay in touch."), p('Receive occasional teachings, reflections, resources, and ministry updates, shared to encourage your walk with Jesus.', 'krs-copy')].join('\n'),
+  section(group([
+    eyebrow('Stay Connected'),
+    h(2, "I'd love to stay in touch."),
+    p('Receive occasional teachings, reflections, resources, and ministry updates, shared to encourage your walk with Jesus.', 'krs-copy'),
     form('newsletter'),
-  ), 'krs-section--alt krs-newsletter'),
+  ].join('\n'), { className: 'krs-newsletter-inner', layout: { type: 'default' } }), 'krs-section--alt krs-newsletter'),
 ].join('\n\n'));
 
 // About

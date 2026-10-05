@@ -252,10 +252,8 @@
 
 <!-- wp:group {"className":"krs-section krs-section--alt krs-newsletter","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section krs-section--alt krs-newsletter">
-<!-- wp:columns {"className":"krs-two-col"} -->
-<div class="wp-block-columns krs-two-col">
-<!-- wp:column -->
-<div class="wp-block-column">
+<!-- wp:group {"className":"krs-newsletter-inner","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-newsletter-inner">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">Stay Connected</p>
 <!-- /wp:paragraph -->
@@ -265,16 +263,10 @@
 <!-- wp:paragraph {"className":"krs-copy"} -->
 <p class="krs-copy">Receive occasional teachings, reflections, resources, and ministry updates, shared to encourage your walk with Jesus.</p>
 <!-- /wp:paragraph -->
-</div>
-<!-- /wp:column -->
-<!-- wp:column -->
-<div class="wp-block-column">
 <!-- wp:shortcode -->
 [krs_form form="newsletter"]
 <!-- /wp:shortcode -->
 </div>
-<!-- /wp:column -->
-</div>
-<!-- /wp:columns -->
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->
