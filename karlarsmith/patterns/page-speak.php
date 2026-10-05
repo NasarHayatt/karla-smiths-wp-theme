@@ -6,14 +6,11 @@
  * Description: Full Speak page with inquiry form.
  * Viewport Width: 1280
  */
-/*
- * TODO(client): Speak form: message field and submit button are reasonable completions; her screenshot cut off after Phone (optional). Confirm the full field list.
- */
 ?>
-<!-- wp:group {"className":"krs-section krs-hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-hero">
+<!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-page-hero">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">INVITE KARLA</p>
+<p class="is-style-eyebrow">Invite Karla</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Truth. Freedom.<br>Spiritual growth. Purpose.</h1>
@@ -26,16 +23,23 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
-<!-- wp:columns -->
-<div class="wp-block-columns">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Areas of teaching.</h2>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"className":"krs-areas"} -->
-<p class="krs-areas">Knowing Jesus Christ • Hearing and Following the Holy Spirit • Truth &amp; Spiritual Freedom • Spiritual Growth &amp; Maturity • Biblical Truth for Everyday Life • Marriage &amp; Relationships • Purpose • Servant Leadership</p>
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
+<!-- wp:paragraph -->
+<p>Knowing Jesus Christ • Hearing and Following the Holy Spirit • Truth &amp; Spiritual Freedom • Spiritual Growth &amp; Maturity • Biblical Truth for Everyday Life • Marriage &amp; Relationships • Purpose • Servant Leadership</p>
 <!-- /wp:paragraph -->
+<!-- wp:paragraph -->
+<p>Her ministry combines biblical teaching, prophetic insight, compassion, and practical application, with sensitivity to the leading of the Holy Spirit.</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:column -->
 <!-- wp:column -->

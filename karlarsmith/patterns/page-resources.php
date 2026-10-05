@@ -7,10 +7,10 @@
  * Viewport Width: 1280
  */
 ?>
-<!-- wp:group {"className":"krs-section krs-hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-hero">
+<!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-page-hero">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">RESOURCES</p>
+<p class="is-style-eyebrow">Resources</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Resources for truth, growth &amp; freedom.</h1>
@@ -26,7 +26,7 @@
 <!-- wp:query {"queryId":1,"query":{"perPage":50,"pages":0,"offset":0,"postType":"krs_resource","order":"asc","orderBy":"title","author":"","search":"","exclude":[],"sticky":"","inherit":false},"className":"krs-resources"} -->
 <div class="wp-block-query krs-resources">
 <!-- wp:post-template {"layout":{"type":"grid","columnCount":3}} -->
-<!-- wp:group {"className":"is-style-card krs-resource-card","layout":{"type":"constrained"}} -->
+<!-- wp:group {"className":"is-style-card krs-resource-card","layout":{"type":"default"}} -->
 <div class="wp-block-group is-style-card krs-resource-card">
 <!-- wp:post-title {"level":3,"isLink":false} /-->
 <!-- wp:post-content /-->

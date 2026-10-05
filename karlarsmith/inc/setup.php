@@ -13,6 +13,7 @@ add_action( 'init', function () {
 	register_block_style( 'core/paragraph', array( 'name' => 'lead', 'label' => __( 'Lead', 'karlarsmith' ) ) );
 	register_block_style( 'core/group', array( 'name' => 'card', 'label' => __( 'Card', 'karlarsmith' ) ) );
 	register_block_style( 'core/group', array( 'name' => 'arch', 'label' => __( 'Arch', 'karlarsmith' ) ) );
+	register_block_style( 'core/button', array( 'name' => 'light', 'label' => __( 'Light (on dark)', 'karlarsmith' ) ) );
 	register_block_style( 'core/image', array( 'name' => 'arch', 'label' => __( 'Arch', 'karlarsmith' ) ) );
 
 	register_block_pattern_category( 'karlarsmith-pages', array( 'label' => __( 'Karla R. Smith pages', 'karlarsmith' ) ) );

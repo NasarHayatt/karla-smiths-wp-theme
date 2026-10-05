@@ -7,10 +7,10 @@
  * Viewport Width: 1280
  */
 ?>
-<!-- wp:group {"className":"krs-section krs-hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-hero">
+<!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-page-hero">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">CONNECT</p>
+<p class="is-style-eyebrow">Connect</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Connect with Karla.</h1>
@@ -23,15 +23,15 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
-<!-- wp:columns -->
-<div class="wp-block-columns">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Send a message.</h2>
 <!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Speaking invitations should use the dedicated speaking inquiry. Fired-Up! Leaders organizational matters should be directed to Fired-Up! Leaders.</p>
+<!-- wp:paragraph {"className":"krs-copy"} -->
+<p class="krs-copy">Speaking invitations should use the dedicated speaking inquiry. Fired-Up! Leaders organizational matters should be directed to Fired-Up! Leaders.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->

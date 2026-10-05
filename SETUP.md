@@ -50,16 +50,19 @@ Header and footer menus are Navigation blocks inside the Header and Footer templ
 - Teaching cards: Teaching Topics menu. Numbers 01, 02, 03 are automatic and follow the Order field (Page Attributes).
 - Resource categories: Resource Categories menu. They are deliberately unlinked.
 
+## Layout source
+
+Layout, spacing, colours and type follow the client's reference files (index.html, about.html, teach.html, write.html, speak.html, resources.html and styles.css). Where they differ from `karlarsmith-master-spec.md` (green headings, sans body text, a dark footer, cream hero bands, a dark Fired-Up! section), the client's files win. Teach (six cards) and the Speak form fields are now confirmed by those files.
+
 ## Open items to confirm with the client
 
 Search the patterns for `TODO(client)` to find these in code:
 
-1. Home hero tagline: long version (her latest instruction) is live; short version is in the footer and site tagline.
-2. Logo treatment: script word mark vs plain serif text (text is the default until a logo is uploaded).
-3. Teach page: only cards 01 to 03 exist, with no descriptions.
-4. Speak form: message field and submit button are inferred.
-5. Footer: extrapolated, not in her screenshots. Privacy Policy and Terms pages are empty drafts, so their footer links 404 until real text exists.
-6. Support the Work button points to https://firedupleaders.org until the real giving URL is supplied.
-7. Stay Connected form emails the admin; no mailing-list service is connected.
-8. Recipient address for form email.
-9. Photos for the below-the-hero Home sections, and pathway card images, were not supplied.
+1. Home hero tagline: short version (reference files) is live; her later note asked for a longer one.
+2. Home "Featured: Latest teaching & writing" block exists in her index.html as a designer placeholder, so it is left out until real content exists.
+3. Support the Work button points to https://firedupleaders.org until the real giving URL is supplied.
+4. Stay Connected form emails the admin; no mailing-list service is connected.
+5. Recipient address for form email (Contact Form 7 > each form > Mail).
+6. Privacy Policy and Terms pages are empty drafts, so their footer links return 404 until real text exists.
+7. Connect and Support the Work page layouts are not in her files; they reuse the same components.
+8. No photos beyond the portrait were supplied, so other sections are text only.

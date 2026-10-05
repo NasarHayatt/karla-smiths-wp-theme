@@ -13,7 +13,7 @@
 	}
 
 	// Scroll reveal. Content stays visible if anything here is unsupported.
-	var items = document.querySelectorAll('.krs-section > *');
+	var items = document.querySelectorAll('.krs-section > *, .krs-page-hero > *, .krs-home-hero .wp-block-column > *');
 	if (reduce || !('IntersectionObserver' in window)) {
 		root.classList.remove('krs-js');
 		return;

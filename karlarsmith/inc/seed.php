@@ -1,7 +1,7 @@
 <?php
 /**
- * One-time starter content on theme activation. Nothing is overwritten:
- * pages and entries are only created if they do not already exist.
+ * Starter content. Pages and entries are only created when missing;
+ * existing ones are never replaced here (see content.php for the one-time refresh).
  */
 defined( 'ABSPATH' ) || exit;
 
@@ -48,27 +48,27 @@ function krs_seed_pages() {
 			wp_insert_post( array( 'post_type' => 'page', 'post_status' => 'draft', 'post_name' => $legal[0], 'post_title' => $legal[1] ) );
 		}
 	}
-	if ( ! empty( $ids['home'] ) && ! is_wp_error( $ids['home'] ) ) {
+	if ( ! empty( $ids['home'] ) && ! is_wp_error( $ids['home'] ) && 'page' !== get_option( 'show_on_front' ) ) {
 		update_option( 'show_on_front', 'page' );
 		update_option( 'page_on_front', $ids['home'] );
 	}
 }
 
-function krs_seed_entries() {
-	foreach ( array( 'Coming Soon', 'Published' ) as $term ) {
-		if ( ! term_exists( $term, 'krs_book_status' ) ) {
-			wp_insert_term( $term, 'krs_book_status' );
-		}
-	}
-	$sets = array(
+/** Entries from the client's reference files: array( post type => rows of title, description, status ). */
+function krs_entry_defs() {
+	return array(
 		'krs_book'     => array(
 			array( 'Lessons Made Relevant for You!', "A developing collection of biblical lessons designed to help readers understand God's Word and apply His truth to everyday life.", 'Coming Soon' ),
 			array( "Let's Be Honest About Marriage", 'A practical, biblical conversation about marriage, relationships, truth, and growth.', 'Coming Soon' ),
+			array( "From Karla's Desk", 'Short teachings, reflections, and biblical insights will be added as the written library grows.', 'Reflections' ),
 		),
 		'krs_topic'    => array(
-			array( 'Knowing Jesus', '' ),
-			array( 'Hearing the Holy Spirit', '' ),
-			array( 'Truth & Freedom', '' ),
+			array( 'Knowing Jesus', 'Teaching that draws believers into a deeper relationship with Christ.' ),
+			array( 'Hearing the Holy Spirit', 'Biblical guidance for recognizing and responding to the Holy Spirit.' ),
+			array( 'Truth & Freedom', "Understanding the truth of God's Word and how it dismantles bondage and deception." ),
+			array( 'Spiritual Maturity', 'Growing in obedience, discernment, character, and consistent faith.' ),
+			array( 'Relationships', 'Biblical truth made relevant to marriage, family, and relationships.' ),
+			array( 'Purpose & Leadership', 'Equipping people to serve with humility and walk in God-given purpose.' ),
 		),
 		'krs_resource' => array(
 			array( 'Teaching Notes', 'Companion notes and Scripture references for selected teachings.' ),
@@ -76,20 +76,34 @@ function krs_seed_entries() {
 			array( 'Prayer Resources', 'Prayer guides and Spirit-led resources as they become available.' ),
 		),
 	);
-	foreach ( $sets as $type => $rows ) {
-		if ( get_posts( array( 'post_type' => $type, 'post_status' => 'any', 'numberposts' => 1, 'fields' => 'ids' ) ) ) {
-			continue;
+}
+
+/** Adds any missing entries and fills empty descriptions. Never overwrites text that exists. */
+function krs_seed_entries() {
+	foreach ( array( 'Coming Soon', 'Published', 'Reflections' ) as $term ) {
+		if ( ! term_exists( $term, 'krs_book_status' ) ) {
+			wp_insert_term( $term, 'krs_book_status' );
 		}
+	}
+	foreach ( krs_entry_defs() as $type => $rows ) {
 		foreach ( $rows as $i => $row ) {
-			$content = $row[1] ? '<!-- wp:paragraph --><p>' . esc_html( $row[1] ) . '</p><!-- /wp:paragraph -->' : '';
-			$id      = wp_insert_post( array(
-				'post_type'    => $type,
-				'post_status'  => 'publish',
-				'post_title'   => $row[0],
-				'post_content' => wp_slash( $content ),
-				'menu_order'   => $i + 1,
-			) );
-			if ( 'krs_book' === $type && $id && ! is_wp_error( $id ) ) {
+			$found = get_posts( array( 'post_type' => $type, 'post_status' => 'any', 'title' => $row[0], 'numberposts' => 1 ) );
+			$markup = '<!-- wp:paragraph --><p>' . esc_html( $row[1] ) . '</p><!-- /wp:paragraph -->';
+			if ( $found ) {
+				$id = $found[0]->ID;
+				if ( '' === trim( $found[0]->post_content ) ) {
+					wp_update_post( array( 'ID' => $id, 'post_content' => wp_slash( $markup ) ) );
+				}
+			} else {
+				$id = wp_insert_post( array(
+					'post_type'    => $type,
+					'post_status'  => 'publish',
+					'post_title'   => $row[0],
+					'post_content' => wp_slash( $markup ),
+					'menu_order'   => $i + 1,
+				) );
+			}
+			if ( 'krs_book' === $type && $id && ! is_wp_error( $id ) && ! has_term( '', 'krs_book_status', $id ) ) {
 				wp_set_object_terms( $id, $row[2], 'krs_book_status' );
 			}
 		}

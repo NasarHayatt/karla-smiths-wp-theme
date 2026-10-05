@@ -7,16 +7,16 @@
  * Viewport Width: 1280
  */
 ?>
-<!-- wp:group {"className":"krs-section krs-hero","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-hero">
+<!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-page-hero">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">ABOUT KARLA</p>
+<p class="is-style-eyebrow">About Karla</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Teacher. Builder.<br>Spiritual Mother. Equipper.</h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"className":"krs-subhead"} -->
-<p class="krs-subhead"><strong>Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</strong></p>
+<!-- wp:paragraph {"className":"is-style-lead"} -->
+<p class="is-style-lead"><strong>Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</strong></p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph {"className":"is-style-lead"} -->
 <p class="is-style-lead">Karla R. Smith is an ordained minister, Bible teacher, equipper of believers, mentor of leaders, and prophetic voice with a heart to see people know Jesus Christ, hear the voice of the Holy Spirit, walk in His truth, and experience the freedom found in Him.</p>
@@ -26,21 +26,23 @@
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
-<!-- wp:columns {"verticalAlignment":"center"} -->
-<div class="wp-block-columns are-vertically-aligned-center">
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
+<!-- wp:column -->
+<div class="wp-block-column">
 <?php echo krs_arch_block(); ?>
 </div>
 <!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"center"} -->
-<div class="wp-block-column is-vertically-aligned-center">
+<!-- wp:column -->
+<div class="wp-block-column">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">Her Ministry</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">A life of teaching, equipping &amp; service.</h2>
 <!-- /wp:heading -->
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
 <p>Ordained in 2005, Karla has faithfully served the Body of Christ through biblical teaching, prophetic ministry, mentoring, discipleship, prayer, and leadership development. As co-founder of Fired-Up! Leaders, she serves alongside her husband, Marvin, developing, equipping, and encouraging servant leaders to mature in Christ and faithfully fulfill their God-given purpose.</p>
 <!-- /wp:paragraph -->
@@ -48,20 +50,24 @@
 <p>With a deep love for God's Word and dependence upon the Holy Spirit, Karla communicates biblical truth with compassion, prophetic insight, and practical application.</p>
 <!-- /wp:paragraph -->
 </div>
+<!-- /wp:group -->
+</div>
 <!-- /wp:column -->
 </div>
 <!-- /wp:columns -->
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section">
+<!-- wp:group {"className":"krs-section krs-section--alt","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-section krs-section--alt">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">A Call to Freedom</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Liberty to the Captives.</h2>
 <!-- /wp:heading -->
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
 <p>Years ago, I received a prophetic word that used the picture of a songbird trapped in a cage. The door was closed, the song was within, but freedom, joy, hope, and expectancy seemed beyond reach.</p>
 <!-- /wp:paragraph -->
@@ -96,6 +102,8 @@
 <!-- wp:paragraph -->
 <p><strong>There is freedom in Christ. There is hope again. And there is still a song within you.</strong></p>
 <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 <!-- wp:quote -->
 <blockquote class="wp-block-quote"><!-- wp:paragraph -->
 <p>"And you shall know the truth, and the truth shall make you free."</p>
@@ -112,11 +120,15 @@
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Leadership beyond the pulpit.</h2>
 <!-- /wp:heading -->
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
 <p>Karla's service has also extended into organizational leadership, education, community service, and professional administration. These experiences have strengthened her ability to communicate biblical truth with compassion, discernment, practical application, and an understanding of real-life leadership challenges.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p>Above all, Karla's desire is to strengthen and equip believers to live with faith, obedience, humility, freedom, and purpose.</p>
 <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 </div>
 <!-- /wp:group -->

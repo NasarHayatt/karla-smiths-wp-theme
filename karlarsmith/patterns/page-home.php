@@ -7,31 +7,28 @@
  * Viewport Width: 1280
  */
 /*
- * TODO(client): Hero tagline: the long version (her latest written instruction) is used. Her reference screenshot shows the short version "Know Jesus. Hear the Holy Spirit. Walk in His Truth." Confirm which she wants.
- * TODO(client): Below-the-hero photos and pathway-card images were not supplied; those sections are text only until she sends photos.
+ * TODO(client): Hero tagline: the short version (client reference files) is used. Her later written note asked for the longer "Know Jesus. Hear the voice of the Holy Spirit. Walk in His truth. Biblical teaching and encouragement to help you grow in faith and live God's Word." Confirm which she wants.
+ * TODO(client): The "Featured: Latest teaching & writing" block in her index.html is a designer placeholder (video feature area) and is intentionally left out until real content exists.
  * TODO(client): Stay Connected form has no mailing-list service wired; submissions are emailed to the site admin.
  */
 ?>
-<!-- wp:group {"className":"krs-section krs-hero krs-hero--home","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-hero krs-hero--home">
-<!-- wp:columns {"verticalAlignment":"center"} -->
-<div class="wp-block-columns are-vertically-aligned-center">
-<!-- wp:column {"verticalAlignment":"center","width":"58%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:58%">
+<!-- wp:group {"className":"krs-home-hero","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-home-hero">
+<!-- wp:columns {"className":"krs-hero-cols"} -->
+<div class="wp-block-columns krs-hero-cols">
+<!-- wp:column -->
+<div class="wp-block-column">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">BIBLE TEACHER • EQUIPPER OF BELIEVERS • MENTOR OF LEADERS • PROPHETIC VOICE</p>
+<p class="is-style-eyebrow">Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Welcome.<br>I'm Karla.</h1>
+<h1 class="wp-block-heading">Welcome. I'm Karla.</h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"className":"is-style-lead"} -->
-<p class="is-style-lead">Know Jesus. Hear the voice of the Holy Spirit. Walk in His truth.</p>
+<!-- wp:paragraph {"className":"krs-tag"} -->
+<p class="krs-tag">Know Jesus. Hear the Holy Spirit. Walk in His Truth.</p>
 <!-- /wp:paragraph -->
-<!-- wp:paragraph {"className":"krs-tagline-sub"} -->
-<p class="krs-tagline-sub">Biblical teaching and encouragement to help you grow in faith and live God's Word.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>I'm a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.</p>
+<!-- wp:paragraph {"className":"krs-hero-body"} -->
+<p class="krs-hero-body">I'm a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
@@ -43,8 +40,8 @@
 <!-- /wp:buttons -->
 </div>
 <!-- /wp:column -->
-<!-- wp:column {"verticalAlignment":"center","width":"42%"} -->
-<div class="wp-block-column is-vertically-aligned-center" style="flex-basis:42%">
+<!-- wp:column -->
+<div class="wp-block-column">
 <?php echo krs_arch_block(); ?>
 </div>
 <!-- /wp:column -->
@@ -53,14 +50,51 @@
 </div>
 <!-- /wp:group -->
 
+<!-- wp:group {"className":"krs-band","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-band">
+<!-- wp:group {"className":"krs-band__inner","layout":{"type":"flex","flexWrap":"wrap","justifyContent":"center"}} -->
+<div class="wp-block-group krs-band__inner">
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Jesus</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Truth</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Holy Spirit</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Freedom</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Spiritual Maturity</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-band__item"} -->
+<p class="krs-band__item">Purpose</p>
+<!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
+</div>
+<!-- /wp:group -->
+
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
+<!-- wp:column -->
+<div class="wp-block-column">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">A Place to Grow</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Let's walk in truth together.</h2>
 <!-- /wp:heading -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
 <p>I believe God's Word is not simply something we study, it is truth we receive, live, and allow to transform us.</p>
 <!-- /wp:paragraph -->
@@ -74,6 +108,34 @@
 <!-- /wp:quote -->
 </div>
 <!-- /wp:group -->
+</div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
+<!-- /wp:group -->
+
+<!-- wp:group {"className":"krs-section krs-section--alt","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-section krs-section--alt">
+<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">The Heart Behind the Call</p>
+<!-- /wp:paragraph -->
+<!-- wp:heading -->
+<h2 class="wp-block-heading">Truth spoken in love.<br>Freedom found in Christ.</h2>
+<!-- /wp:heading -->
+<!-- wp:paragraph {"className":"is-style-lead"} -->
+<p class="is-style-lead">I have a deep love for people and a particular burden for those who feel bound, fearful, wounded, discouraged, or hindered from becoming who God has called them to be.</p>
+<!-- /wp:paragraph -->
+<!-- wp:paragraph {"className":"krs-copy"} -->
+<p class="krs-copy">My desire is always to point people to Jesus Christ, the One who sets us free. Through biblical teaching, prophetic insight, prayer, writing, encouragement, and Spirit-led ministry, I want to help people recognize truth, respond to the Holy Spirit, grow in maturity, and move forward with hope, obedience, and purpose.</p>
+<!-- /wp:paragraph -->
+<!-- wp:buttons -->
+<div class="wp-block-buttons"><!-- wp:button -->
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/about/">Read Karla's Story</a></div>
+<!-- /wp:button --></div>
+<!-- /wp:buttons -->
+</div>
+<!-- /wp:group -->
 
 <!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-section">
@@ -83,12 +145,15 @@
 <!-- wp:heading -->
 <h2 class="wp-block-heading">There are several ways we can grow together.</h2>
 <!-- /wp:heading -->
-<!-- wp:columns {"className":"krs-cards"} -->
-<div class="wp-block-columns krs-cards">
+<!-- wp:columns {"className":"krs-pathways"} -->
+<div class="wp-block-columns krs-pathways">
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:group {"className":"is-style-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-card">
+<!-- wp:group {"className":"krs-pathway","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-pathway">
+<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">01</p>
+<!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Teach</h3>
 <!-- /wp:heading -->
@@ -104,8 +169,11 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:group {"className":"is-style-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-card">
+<!-- wp:group {"className":"krs-pathway","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-pathway">
+<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">02</p>
+<!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Write</h3>
 <!-- /wp:heading -->
@@ -121,8 +189,11 @@
 <!-- /wp:column -->
 <!-- wp:column -->
 <div class="wp-block-column">
-<!-- wp:group {"className":"is-style-card","layout":{"type":"constrained"}} -->
-<div class="wp-block-group is-style-card">
+<!-- wp:group {"className":"krs-pathway","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-pathway">
+<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
+<p class="is-style-eyebrow">03</p>
+<!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
 <h3 class="wp-block-heading">Speak</h3>
 <!-- /wp:heading -->
@@ -141,54 +212,48 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section">
-<!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">The Heart Behind the Call</p>
-<!-- /wp:paragraph -->
-<!-- wp:heading -->
-<h2 class="wp-block-heading">Truth spoken in love. Freedom found in Christ.</h2>
-<!-- /wp:heading -->
-<!-- wp:paragraph {"className":"is-style-lead"} -->
-<p class="is-style-lead">I have a deep love for people and a particular burden for those who feel bound, fearful, wounded, discouraged, or hindered from becoming who God has called them to be.</p>
-<!-- /wp:paragraph -->
-<!-- wp:paragraph -->
-<p>My desire is always to point people to Jesus Christ, the One who sets us free. Through biblical teaching, prophetic insight, prayer, writing, encouragement, and Spirit-led ministry, I want to help people recognize truth, respond to the Holy Spirit, grow in maturity, and move forward with hope, obedience, and purpose.</p>
-<!-- /wp:paragraph -->
-<!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="/about/">Read Karla's Story</a></div>
-<!-- /wp:button --></div>
-<!-- /wp:buttons -->
-</div>
-<!-- /wp:group -->
-
-<!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section">
+<!-- wp:group {"className":"krs-section krs-section--dark","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-section krs-section--dark">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
+<!-- wp:column -->
+<div class="wp-block-column">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
 <p class="is-style-eyebrow">Fired-Up! Leaders</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading -->
 <h2 class="wp-block-heading">Serving together.</h2>
 <!-- /wp:heading -->
+</div>
+<!-- /wp:column -->
+<!-- wp:column -->
+<div class="wp-block-column">
+<!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
+<div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
 <p>Karla and her husband, Marvin, co-founded Fired-Up! in 1996 with a heart to develop, equip, and empower servant leaders who follow Jesus Christ.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p>KarlaRSmith.com is the home of Karla's personal teaching, writing, speaking, and ministry voice, while Fired-Up! Leaders remains the organizational ministry founded and led by Marvin and Karla.</p>
 <!-- /wp:paragraph -->
+</div>
+<!-- /wp:group -->
 <!-- wp:buttons -->
-<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-outline"} -->
-<div class="wp-block-button is-style-outline"><a class="wp-block-button__link wp-element-button" href="https://firedupleaders.org">Visit Fired-Up! Leaders</a></div>
+<div class="wp-block-buttons"><!-- wp:button {"className":"is-style-light"} -->
+<div class="wp-block-button is-style-light"><a class="wp-block-button__link wp-element-button" href="https://firedupleaders.org">Visit Fired-Up! Leaders</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 </div>
+<!-- /wp:column -->
+</div>
+<!-- /wp:columns -->
+</div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"krs-section krs-section--last","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section krs-section--last">
-<!-- wp:columns -->
-<div class="wp-block-columns">
+<!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-section">
+<!-- wp:columns {"className":"krs-two-col"} -->
+<div class="wp-block-columns krs-two-col">
 <!-- wp:column -->
 <div class="wp-block-column">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
@@ -197,8 +262,8 @@
 <!-- wp:heading -->
 <h2 class="wp-block-heading">I'd love to stay in touch.</h2>
 <!-- /wp:heading -->
-<!-- wp:paragraph -->
-<p>Receive occasional teachings, reflections, resources, and ministry updates, shared to encourage your walk with Jesus.</p>
+<!-- wp:paragraph {"className":"krs-copy"} -->
+<p class="krs-copy">Receive occasional teachings, reflections, resources, and ministry updates, shared to encourage your walk with Jesus.</p>
 <!-- /wp:paragraph -->
 </div>
 <!-- /wp:column -->

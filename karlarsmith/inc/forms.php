@@ -2,8 +2,11 @@
 /**
  * Forms: Contact Form 7 forms are created automatically (once the plugin is
  * active) and rendered through [krs_form form="connect|speak|newsletter"].
+ * Field lists follow the client's reference files.
  */
 defined( 'ABSPATH' ) || exit;
+
+define( 'KRS_FORMS_VERSION', 2 );
 
 function krs_field( $tag, $label, $type = 'text', $extra = '' ) {
 	return '<div class="krs-field"><label><span class="screen-reader-text">' . esc_html( $label ) . '</span>[' . $type . ' ' . $tag . ' ' . $extra . ' placeholder "' . esc_attr( $label ) . '"]</label></div>';
@@ -34,11 +37,14 @@ function krs_form_definitions() {
 			'form'    => krs_field( 'your-name', 'Name', 'text*', 'autocomplete:name' )
 				. krs_field( 'your-org', 'Organization / Ministry', 'text*', 'autocomplete:organization' )
 				. '<div class="krs-form-row">' . krs_field( 'your-email', 'Email', 'email*', 'autocomplete:email' ) . krs_field( 'your-phone', 'Phone (optional)', 'tel', 'autocomplete:tel' ) . '</div>'
-				. krs_field( 'your-message', 'Tell me about your event', 'textarea*' )
+				. krs_field( 'event-name', 'Event Name', 'text' )
+				. '<div class="krs-form-row">' . krs_field( 'event-date', 'Event Date', 'text' ) . krs_field( 'event-location', 'Location', 'text' ) . '</div>'
+				. '<div class="krs-field"><label><span class="screen-reader-text">Type of Event</span>[select event-type first_as_label "Type of Event" "Church / Ministry" "Conference" "Retreat" "Podcast / Interview" "Other"]</label></div>'
+				. krs_field( 'your-message', 'Tell us about your event', 'textarea*' )
 				. krs_honeypot()
-				. '<div class="krs-submit">[submit "Send Speaking Inquiry"]</div>',
+				. '<div class="krs-submit">[submit "Submit Inquiry"]</div>',
 			'subject' => '[_site_title] Speaking inquiry: [your-org]',
-			'body'    => "Name: [your-name]\nOrganization / Ministry: [your-org]\nEmail: [your-email]\nPhone: [your-phone]\n\nAbout the event:\n[your-message]",
+			'body'    => "Name: [your-name]\nOrganization / Ministry: [your-org]\nEmail: [your-email]\nPhone: [your-phone]\n\nEvent: [event-name]\nDate: [event-date]\nLocation: [event-location]\nType: [event-type]\n\nAbout the event:\n[your-message]",
 			'reply'   => '[your-email]',
 		),
 		'newsletter' => array(
@@ -54,33 +60,50 @@ function krs_form_definitions() {
 	);
 }
 
-// Create the forms once Contact Form 7 exists. Safe to run repeatedly.
+// Create (or refresh) the forms once Contact Form 7 exists. Safe to run repeatedly.
+// A refresh updates the fields and mail text only and keeps any recipient set in Contact Form 7.
 add_action( 'admin_init', function () {
 	if ( ! class_exists( 'WPCF7_ContactForm' ) || ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
-	$ids   = get_option( 'krs_form_ids', array() );
-	$defs  = krs_form_definitions();
-	$from  = $defs['from'];
-	$dirty = false;
+	$ids     = get_option( 'krs_form_ids', array() );
+	$defs    = krs_form_definitions();
+	$from    = $defs['from'];
+	$outdated = (int) get_option( 'krs_forms_version' ) < KRS_FORMS_VERSION;
+	$dirty   = false;
 
 	foreach ( array( 'connect', 'speak', 'newsletter' ) as $key ) {
-		if ( ! empty( $ids[ $key ] ) && 'wpcf7_contact_form' === get_post_type( $ids[ $key ] ) && 'trash' !== get_post_status( $ids[ $key ] ) ) {
+		$d      = $defs[ $key ];
+		$exists = ! empty( $ids[ $key ] ) && 'wpcf7_contact_form' === get_post_type( $ids[ $key ] ) && 'trash' !== get_post_status( $ids[ $key ] );
+		if ( $exists && ! $outdated ) {
 			continue;
 		}
-		$d             = $defs[ $key ];
-		$cf            = WPCF7_ContactForm::get_template( array( 'title' => $d['title'] ) );
-		$props         = $cf->get_properties();
-		$props['form'] = $d['form'];
-		$props['mail'] = array_merge( $props['mail'], array(
-			'subject'            => $d['subject'],
-			'sender'             => $from,
-			'body'               => $d['body'],
-			'recipient'          => '[_site_admin_email]',
-			'additional_headers' => 'Reply-To: ' . $d['reply'],
-			'use_html'           => false,
-			'exclude_blank'      => true,
-		) );
+		if ( $exists ) {
+			$cf = WPCF7_ContactForm::get_instance( $ids[ $key ] );
+			if ( ! $cf ) {
+				continue;
+			}
+			$props         = $cf->get_properties();
+			$props['form'] = $d['form'];
+			$props['mail'] = array_merge( $props['mail'], array(
+				'subject'            => $d['subject'],
+				'body'               => $d['body'],
+				'additional_headers' => 'Reply-To: ' . $d['reply'],
+			) );
+		} else {
+			$cf            = WPCF7_ContactForm::get_template( array( 'title' => $d['title'] ) );
+			$props         = $cf->get_properties();
+			$props['form'] = $d['form'];
+			$props['mail'] = array_merge( $props['mail'], array(
+				'subject'            => $d['subject'],
+				'sender'             => $from,
+				'body'               => $d['body'],
+				'recipient'          => '[_site_admin_email]',
+				'additional_headers' => 'Reply-To: ' . $d['reply'],
+				'use_html'           => false,
+				'exclude_blank'      => true,
+			) );
+		}
 		$cf->set_properties( $props );
 		$cf->save();
 		$ids[ $key ] = $cf->id();
@@ -88,6 +111,9 @@ add_action( 'admin_init', function () {
 	}
 	if ( $dirty ) {
 		update_option( 'krs_form_ids', $ids );
+	}
+	if ( $outdated ) {
+		update_option( 'krs_forms_version', KRS_FORMS_VERSION );
 	}
 } );
 
