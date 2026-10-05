@@ -60,9 +60,9 @@ p.is-style-eyebrow {
 p.is-style-lead {
 	font-size: var(--wp--preset--font-size--lead);
 	line-height: 1.5;
-	max-width: 780px;
+	max-width: 860px;
 }
-.krs-subhead { font-size: 1.35rem; line-height: 1.5; max-width: 780px; }
+.krs-subhead { font-size: 1.35rem; line-height: 1.5; max-width: 860px; }
 .krs-tagline-sub { font-family: var(--krs-sans); color: var(--wp--preset--color--ink); margin-top: 0.25rem; }
 .krs-fineprint { font-size: 0.9rem; margin-top: 1.5rem; }
 .krs-areas { font-family: var(--krs-sans); font-size: 0.98rem; line-height: 1.8; }
