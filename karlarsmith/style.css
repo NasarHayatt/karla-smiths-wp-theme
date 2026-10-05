@@ -484,3 +484,24 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content.wp-block-navigation-item__content:focus-visible { padding-left: 8px !important; }
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation-item__content::after { font-size: 1.1rem; }
 .wp-block-navigation__responsive-container.is-menu-open .wp-block-navigation__responsive-container-content::before { top: 40px; }
+
+/* Form spacing: Contact Form 7 wraps fields in paragraphs, so reset their margins here */
+.krs-section .wpcf7 form p, .krs-section .wpcf7 form .krs-field, .krs-section .wpcf7 form .krs-form-row { margin: 0; }
+.wpcf7 form { gap: 12px; }
+.wpcf7 .krs-form-row { gap: 12px; }
+.wpcf7 input[type="text"], .wpcf7 input[type="email"], .wpcf7 input[type="tel"], .wpcf7 select { padding: 14px; line-height: 1.4; }
+.wpcf7 textarea { height: 150px; min-height: 150px; rows: 5; }
+.wpcf7 .krs-submit { margin-top: 4px; }
+.wpcf7 .wpcf7-spinner { margin: 0 0 0 12px; }
+
+/* Footer logo: works with any saved copy of the footer. Turns a dark logo light on the green footer. */
+.krs-footer .wp-block-site-logo img {
+	width: 250px;
+	max-width: 100%;
+	height: auto;
+	filter: invert(1) hue-rotate(180deg);
+	mix-blend-mode: screen;
+	opacity: 0.92;
+}
+.krs-footer .wp-block-site-logo { margin: 0 0 14px; }
+.krs-footer .wp-block-site-logo:has(img) ~ .wp-block-site-title { display: none; }
