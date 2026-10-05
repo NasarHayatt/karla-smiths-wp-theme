@@ -553,3 +553,14 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 	.krs-subscribe-card { padding: 40px 24px; border-radius: 24px; }
 	.krs-subscribe-card .wp-block-columns { gap: 28px; }
 }
+
+/* Footer logo: any image placed in the footer is lightened for the green background */
+.krs-footer img {
+	width: 250px;
+	max-width: 100%;
+	height: auto;
+	filter: invert(1) hue-rotate(180deg);
+	mix-blend-mode: screen;
+	opacity: 0.92;
+}
+.krs-footer figure { margin: 0 0 14px; }
