@@ -250,10 +250,8 @@
 </div>
 <!-- /wp:group -->
 
-<!-- wp:group {"className":"krs-section","layout":{"type":"constrained"}} -->
-<div class="wp-block-group krs-section">
-<!-- wp:group {"className":"krs-subscribe-card","layout":{"type":"default"}} -->
-<div class="wp-block-group krs-subscribe-card">
+<!-- wp:group {"className":"krs-section krs-section--alt krs-newsletter","layout":{"type":"constrained"}} -->
+<div class="wp-block-group krs-section krs-section--alt krs-newsletter">
 <!-- wp:columns {"className":"krs-two-col"} -->
 <div class="wp-block-columns krs-two-col">
 <!-- wp:column -->
@@ -278,7 +276,5 @@
 <!-- /wp:column -->
 </div>
 <!-- /wp:columns -->
-</div>
-<!-- /wp:group -->
 </div>
 <!-- /wp:group -->

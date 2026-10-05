@@ -517,42 +517,14 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 .wp-site-blocks { min-height: 100vh; display: flex; flex-direction: column; }
 .wp-site-blocks > main { flex: 1 0 auto; }
 
-/* Stay Connected panel */
-.krs-subscribe-card {
-	position: relative;
-	overflow: hidden;
-	padding: 64px 60px;
-	border: 1px solid var(--krs-line);
-	border-radius: 32px;
-	background: linear-gradient(120deg, #f5edea, #fbf4ec 55%, #f3e5dc);
-	box-shadow: 0 24px 60px rgba(47, 57, 39, 0.08);
+/* Stay Connected: a normal cream band; fields and button share one row on wide screens */
+@media (min-width: 900px) {
+	.krs-newsletter .wpcf7 form { grid-template-columns: 1fr 1fr auto; align-items: center; column-gap: 12px; }
+	.krs-newsletter .wpcf7 form .krs-form-row { display: contents; }
+	.krs-newsletter .wpcf7 form .krs-submit { margin: 0; }
+	.krs-newsletter .wpcf7 form .wpcf7-response-output { grid-column: 1 / -1; }
 }
-.krs-subscribe-card::before, .krs-subscribe-card::after {
-	content: "";
-	position: absolute;
-	border-radius: 50%;
-	border: 1px solid rgba(198, 165, 107, 0.55);
-	pointer-events: none;
-}
-.krs-subscribe-card::before { width: 320px; height: 320px; right: -90px; top: -110px; }
-.krs-subscribe-card::after { width: 200px; height: 200px; right: 40px; top: -40px; border-color: rgba(198, 165, 107, 0.3); }
-.krs-subscribe-card .wp-block-columns { position: relative; z-index: 1; align-items: center; gap: 56px; }
-.krs-subscribe-card h2.wp-block-heading { font-size: clamp(2rem, 3.2vw, 2.9rem); line-height: 1.08; margin: 10px 0 16px; }
-.krs-subscribe-card .krs-copy { margin: 0; }
-.krs-subscribe-card .wpcf7 form { gap: 12px; max-width: none; }
-.krs-subscribe-card .wpcf7 input[type="text"], .krs-subscribe-card .wpcf7 input[type="email"] {
-	border: 1px solid rgba(47, 57, 39, 0.18);
-	border-radius: 999px;
-	padding: 16px 22px;
-	background: rgba(255, 255, 255, 0.92);
-}
-.krs-subscribe-card .wpcf7 input:focus { outline: 0; border-color: var(--krs-brown); box-shadow: 0 0 0 4px rgba(47, 57, 39, 0.12); }
-.krs-subscribe-card .wpcf7 .krs-submit input[type="submit"] { width: 100%; padding: 16px 22px; }
-.krs-subscribe-card .wpcf7 .krs-submit { margin-top: 2px; }
-@media (max-width: 781px) {
-	.krs-subscribe-card { padding: 40px 24px; border-radius: 24px; }
-	.krs-subscribe-card .wp-block-columns { gap: 28px; }
-}
+.krs-newsletter .wpcf7 form .krs-submit input[type="submit"] { white-space: nowrap; }
 
 /* Footer logo: any image placed in the footer is lightened for the green background */
 .krs-footer img {
