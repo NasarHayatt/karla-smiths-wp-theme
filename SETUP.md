@@ -69,4 +69,4 @@ Search the patterns for `TODO(client)` to find these in code:
 
 ## Social icons
 
-The footer has Facebook, Instagram, YouTube and LinkedIn icons. Icons without a link stay hidden. Add the real profile URLs in Appearance > Editor > Patterns > Template Parts > Footer (click an icon, paste the link), or send the URLs to be added in the theme.
+The footer has Facebook, Instagram and YouTube icons. They currently link to each platform's home page as placeholders. Replace them with Karla's real profile links in Appearance > Editor > Patterns > Template Parts > Footer (click an icon, paste the link), or send the URLs to be set in the theme.
