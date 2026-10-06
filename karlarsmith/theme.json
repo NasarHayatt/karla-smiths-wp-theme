@@ -52,8 +52,8 @@
 				{ "slug": "base", "name": "Body", "size": "1rem" },
 				{ "slug": "lead", "name": "Lead", "size": "1.42rem" },
 				{ "slug": "heading-m", "name": "Heading 3", "size": "2rem" },
-				{ "slug": "heading-l", "name": "Heading 2", "size": "clamp(2.3rem, 4vw, 4rem)" },
-				{ "slug": "heading-xl", "name": "Heading 1", "size": "clamp(3rem, 6vw, 5rem)" }
+				{ "slug": "heading-l", "name": "Heading 2", "size": "clamp(1.85rem, 4vw, 4rem)" },
+				{ "slug": "heading-xl", "name": "Heading 1", "size": "clamp(2.2rem, 6vw, 5rem)" }
 			]
 		},
 		"spacing": {

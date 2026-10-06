@@ -10,7 +10,7 @@
 <!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-page-hero">
 <!-- wp:paragraph {"className":"is-style-eyebrow"} -->
-<p class="is-style-eyebrow">Teach</p>
+<p class="is-style-eyebrow">Teaching</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
 <h1 class="wp-block-heading">Truth that leads to freedom.</h1>

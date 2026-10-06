@@ -86,7 +86,6 @@ write('arch-portrait.php',
 write('page-home.php', {
   title: 'Home page', slug: 'page-home', desc: 'Full Home page.',
   todo: [
-    'Hero tagline: the short version (client reference files) is used. Her later written note asked for the longer "Know Jesus. Hear the voice of the Holy Spirit. Walk in His truth. Biblical teaching and encouragement to help you grow in faith and live God\'s Word." Confirm which she wants.',
     'The "Featured: Latest teaching & writing" block in her index.html is a designer placeholder (video feature area) and is intentionally left out until real content exists.',
     'Stay Connected form has no mailing-list service wired; submissions are emailed to the site admin.',
   ],
@@ -94,9 +93,9 @@ write('page-home.php', {
   group(columns([
     column([
       eyebrow('Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice'),
-      h(1, "Welcome. I'm Karla."),
-      p('Know Jesus. Hear the Holy Spirit. Walk in His Truth.', 'krs-tag'),
-      p("I'm a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.", 'krs-hero-body'),
+      h(1, 'Know Jesus. Hear the Holy Spirit. Walk in His Truth.'),
+      h(2, "Welcome. I'm Karla.", 'krs-welcome'),
+      p('My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.', 'krs-hero-body'),
       buttons([{ text: 'Explore the Teaching', url: '/teach/' }, { text: 'About Karla', url: '/about/', style: 'outline' }]),
     ].join('\n')),
     column(arch()),
@@ -107,7 +106,7 @@ write('page-home.php', {
   section(twoCol(
     [eyebrow('A Place to Grow'), h(2, "Let's walk in truth together.")].join('\n'),
     copy(
-      p("I believe God's Word is not simply something we study, it is truth we receive, live, and allow to transform us."),
+      p("I believe God's Word is not simply something we study. It is truth we receive, live, and allow to transform us."),
       p('Whether you are growing in your relationship with Jesus, learning to recognize the voice of the Holy Spirit, seeking freedom, or stepping more fully into your purpose, my prayer is that what you find here will encourage you, strengthen you, and point you back to Christ.'),
       quote('"And you shall know the truth, and the truth shall make you free."', 'John 8:32'),
     ))),
@@ -124,9 +123,9 @@ write('page-home.php', {
     eyebrow('Come Along'),
     h(2, 'There are several ways we can grow together.'),
     columns([
-      pathway('01', 'Teach', "Biblical teaching and prophetic insight to help believers know Christ, recognize truth, mature spiritually, and live God's Word.", ['Explore Teaching →', '/teach/']),
-      pathway('02', 'Write', 'Books, reflections, and resources designed to make biblical truth relevant to everyday life.', ['Explore Writing →', '/write/']),
-      pathway('03', 'Speak', 'Biblical teaching and Spirit-led ministry for churches, conferences, gatherings, podcasts, and retreats.', ['Invite Karla →', '/speak/']),
+      pathway('01', 'Teaching', "Biblical teaching and prophetic insight to help believers know Christ, recognize truth, mature spiritually, and live God's Word.", ['Explore Teaching →', '/teach/']),
+      pathway('02', 'Books & Writing', 'Books, reflections, and resources designed to make biblical truth relevant to everyday life.', ['Explore Writing →', '/write/']),
+      pathway('03', 'Speaking', 'Biblical teaching and Spirit-led ministry for churches, conferences, gatherings, podcasts, and retreats.', ['Invite Karla →', '/speak/']),
     ], 'krs-pathways'),
   ].join('\n')),
 
@@ -195,7 +194,7 @@ const topicCard = group([
 ].join('\n'), { className: 'is-style-card krs-topic-card', layout: { type: 'default' } });
 write('page-teach.php', { title: 'Teach page', slug: 'page-teach', desc: 'Full Teach page. Topic cards come from the Teaching Topics post type.' }, [
   pageHero(
-    eyebrow('Teach'),
+    eyebrow('Teaching'),
     h(1, 'Truth that leads to freedom.'),
     lead("Karla teaches from a conviction that God's Word is alive, relevant, and transformational."),
   ),
@@ -213,7 +212,7 @@ const bookCard = group([
 ].join('\n'), { className: 'is-style-card krs-book-card', layout: { type: 'default' } });
 write('page-write.php', { title: 'Write page', slug: 'page-write', desc: 'Full Write page. Cards come from the Books post type.' }, [
   pageHero(
-    eyebrow('Write'),
+    eyebrow('Books & Writing'),
     h(1, 'Truth made relevant for life.'),
     lead('Through books, reflections, and written teachings, Karla seeks to make biblical truth understandable, relevant, and applicable to everyday life.'),
   ),
@@ -276,7 +275,6 @@ write('page-connect.php', { title: 'Connect page', slug: 'page-connect', desc: '
 // Support the Work
 write('page-support.php', {
   title: 'Support the Work page', slug: 'page-support', desc: 'Support the Work page (footer link only).',
-  todo: ['Support button: exact Fired-Up! Leaders giving URL not provided. Currently points to https://firedupleaders.org. Edit the Button block link when she supplies it.'],
 }, [
   pageHero(
     eyebrow('Support the Work'),
@@ -288,7 +286,7 @@ write('page-support.php', {
     p('If you have been encouraged by this ministry and would like to help make these teachings and resources available to others, you are warmly invited to support the work through Fired-Up! Leaders, a 501(c)(3) nonprofit ministry.', 'krs-copy'),
     p('Your tax-deductible contribution helps support the continued work of sharing biblical truth, equipping believers, developing resources, and encouraging people to grow in Christ and live lives of faith, freedom, and God-given purpose.', 'krs-copy'),
     p('Thank you for partnering with us and helping this work reach others.', 'krs-copy'),
-    buttons([{ text: 'Support the Work', url: 'https://firedupleaders.org' }]),
+    buttons([{ text: 'Support the Work', url: 'https://firedupleaders.org/giving/' }]),
     p('Contributions are made to and received by Fired-Up! Leaders, a 501(c)(3) nonprofit ministry.', 'krs-fineprint'),
   ].join('\n')),
 ].join('\n\n'));

@@ -6,9 +6,6 @@
  * Description: Support the Work page (footer link only).
  * Viewport Width: 1280
  */
-/*
- * TODO(client): Support button: exact Fired-Up! Leaders giving URL not provided. Currently points to https://firedupleaders.org. Edit the Button block link when she supplies it.
- */
 ?>
 <!-- wp:group {"className":"krs-page-hero","layout":{"type":"constrained"}} -->
 <div class="wp-block-group krs-page-hero">
@@ -40,7 +37,7 @@
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
-<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://firedupleaders.org">Support the Work</a></div>
+<div class="wp-block-button"><a class="wp-block-button__link wp-element-button" href="https://firedupleaders.org/giving/">Support the Work</a></div>
 <!-- /wp:button --></div>
 <!-- /wp:buttons -->
 <!-- wp:paragraph {"className":"krs-fineprint"} -->

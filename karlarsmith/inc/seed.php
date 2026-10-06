@@ -19,9 +19,9 @@ function krs_seed_pages() {
 	$pages = array(
 		array( 'home', 'Home', 'page-home' ),
 		array( 'about', 'About', 'page-about' ),
-		array( 'teach', 'Teach', 'page-teach' ),
-		array( 'write', 'Write', 'page-write' ),
-		array( 'speak', 'Speak', 'page-speak' ),
+		array( 'teach', 'Teaching', 'page-teach' ),
+		array( 'write', 'Books & Writing', 'page-write' ),
+		array( 'speak', 'Speaking', 'page-speak' ),
 		array( 'resources', 'Resources', 'page-resources' ),
 		array( 'connect', 'Connect', 'page-connect' ),
 		array( 'support-the-work', 'Support the Work', 'page-support' ),

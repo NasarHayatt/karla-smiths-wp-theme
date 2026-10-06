@@ -59,12 +59,14 @@ add_filter( 'render_block_data', function ( $block ) {
 // One-time refresh of the starter pages to the current patterns (adds missing pages too).
 // Only pages that still carry the theme's own markup (krs-section) are replaced.
 add_action( 'admin_init', function () {
-	$version = 8;
+	$version = 9;
 	if ( (int) get_option( 'krs_content_version' ) >= $version || ! current_user_can( 'manage_options' ) ) {
 		return;
 	}
+	krs_reset_template_parts();
 	krs_seed_entries();
 	krs_seed_pages();
+	krs_rename_pages();
 	$map = array(
 		'home' => 'page-home', 'about' => 'page-about', 'teach' => 'page-teach', 'write' => 'page-write',
 		'speak' => 'page-speak', 'resources' => 'page-resources', 'connect' => 'page-connect', 'support-the-work' => 'page-support',
@@ -77,3 +79,29 @@ add_action( 'admin_init', function () {
 	}
 	update_option( 'krs_content_version', $version );
 } );
+
+/** Removes Site Editor copies of the header and footer so the theme's files apply (the logo is a site setting and stays). */
+function krs_reset_template_parts() {
+	$parts = get_posts( array(
+		'post_type'   => 'wp_template_part',
+		'post_status' => 'any',
+		'numberposts' => -1,
+		'tax_query'   => array( array( 'taxonomy' => 'wp_theme', 'field' => 'name', 'terms' => get_stylesheet() ) ),
+	) );
+	foreach ( $parts as $part ) {
+		if ( in_array( $part->post_name, array( 'header', 'footer' ), true ) ) {
+			wp_delete_post( $part->ID, true );
+		}
+	}
+}
+
+/** Page titles follow the client's naming: Teaching, Books & Writing, Speaking (URLs stay the same). */
+function krs_rename_pages() {
+	$names = array( 'teach' => array( 'Teach', 'Teaching' ), 'write' => array( 'Write', 'Books & Writing' ), 'speak' => array( 'Speak', 'Speaking' ) );
+	foreach ( $names as $slug => $pair ) {
+		$page = get_page_by_path( $slug );
+		if ( $page && $page->post_title === $pair[0] ) {
+			wp_update_post( array( 'ID' => $page->ID, 'post_title' => $pair[1] ) );
+		}
+	}
+}

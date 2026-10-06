@@ -7,7 +7,6 @@
  * Viewport Width: 1280
  */
 /*
- * TODO(client): Hero tagline: the short version (client reference files) is used. Her later written note asked for the longer "Know Jesus. Hear the voice of the Holy Spirit. Walk in His truth. Biblical teaching and encouragement to help you grow in faith and live God's Word." Confirm which she wants.
  * TODO(client): The "Featured: Latest teaching & writing" block in her index.html is a designer placeholder (video feature area) and is intentionally left out until real content exists.
  * TODO(client): Stay Connected form has no mailing-list service wired; submissions are emailed to the site admin.
  */
@@ -22,13 +21,13 @@
 <p class="is-style-eyebrow">Bible Teacher • Equipper of Believers • Mentor of Leaders • Prophetic Voice</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":1} -->
-<h1 class="wp-block-heading">Welcome. I'm Karla.</h1>
+<h1 class="wp-block-heading">Know Jesus. Hear the Holy Spirit. Walk in His Truth.</h1>
 <!-- /wp:heading -->
-<!-- wp:paragraph {"className":"krs-tag"} -->
-<p class="krs-tag">Know Jesus. Hear the Holy Spirit. Walk in His Truth.</p>
-<!-- /wp:paragraph -->
+<!-- wp:heading {"className":"krs-welcome"} -->
+<h2 class="wp-block-heading krs-welcome">Welcome. I'm Karla.</h2>
+<!-- /wp:heading -->
 <!-- wp:paragraph {"className":"krs-hero-body"} -->
-<p class="krs-hero-body">I'm a Bible teacher, equipper of believers, mentor of leaders, and prophetic voice. My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.</p>
+<p class="krs-hero-body">My heart is to help you know Jesus more intimately, recognize the voice of the Holy Spirit, grow in biblical truth, and walk in the freedom and purpose God has for your life.</p>
 <!-- /wp:paragraph -->
 <!-- wp:buttons -->
 <div class="wp-block-buttons"><!-- wp:button -->
@@ -96,7 +95,7 @@
 <!-- wp:group {"className":"krs-copy","layout":{"type":"default"}} -->
 <div class="wp-block-group krs-copy">
 <!-- wp:paragraph -->
-<p>I believe God's Word is not simply something we study, it is truth we receive, live, and allow to transform us.</p>
+<p>I believe God's Word is not simply something we study. It is truth we receive, live, and allow to transform us.</p>
 <!-- /wp:paragraph -->
 <!-- wp:paragraph -->
 <p>Whether you are growing in your relationship with Jesus, learning to recognize the voice of the Holy Spirit, seeking freedom, or stepping more fully into your purpose, my prayer is that what you find here will encourage you, strengthen you, and point you back to Christ.</p>
@@ -155,7 +154,7 @@
 <p class="is-style-eyebrow">01</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Teach</h3>
+<h3 class="wp-block-heading">Teaching</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>Biblical teaching and prophetic insight to help believers know Christ, recognize truth, mature spiritually, and live God's Word.</p>
@@ -175,7 +174,7 @@
 <p class="is-style-eyebrow">02</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Write</h3>
+<h3 class="wp-block-heading">Books &amp; Writing</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>Books, reflections, and resources designed to make biblical truth relevant to everyday life.</p>
@@ -195,7 +194,7 @@
 <p class="is-style-eyebrow">03</p>
 <!-- /wp:paragraph -->
 <!-- wp:heading {"level":3} -->
-<h3 class="wp-block-heading">Speak</h3>
+<h3 class="wp-block-heading">Speaking</h3>
 <!-- /wp:heading -->
 <!-- wp:paragraph -->
 <p>Biblical teaching and Spirit-led ministry for churches, conferences, gatherings, podcasts, and retreats.</p>

@@ -60,9 +60,13 @@ Search the patterns for `TODO(client)` to find these in code:
 
 1. Home hero tagline: short version (reference files) is live; her later note asked for a longer one.
 2. Home "Featured: Latest teaching & writing" block exists in her index.html as a designer placeholder, so it is left out until real content exists.
-3. Support the Work button points to https://firedupleaders.org until the real giving URL is supplied.
+3. Support the Work button points to the Fired-Up! Leaders giving page, https://firedupleaders.org/giving/.
 4. Stay Connected form emails the admin; no mailing-list service is connected.
 5. Recipient address for form email (Contact Form 7 > each form > Mail).
 6. Privacy Policy and Terms are published with drafted text based on what the site does (forms, no payments, no analytics). Confirm the facts and have an attorney review before launch.
 7. Connect and Support the Work page layouts are not in her files; they reuse the same components.
 8. No photos beyond the portrait were supplied, so other sections are text only.
+
+## Social icons
+
+The footer has Facebook, Instagram, YouTube and LinkedIn icons. Icons without a link stay hidden. Add the real profile URLs in Appearance > Editor > Patterns > Template Parts > Footer (click an icon, paste the link), or send the URLs to be added in the theme.
