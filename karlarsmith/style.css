@@ -594,3 +594,6 @@ p.is-style-lead { font-family: var(--krs-serif); font-size: 1.42rem; line-height
 	.is-style-card h3, .krs-pathway h3 { font-size: 1.55rem; }
 	.krs-pathway h3 { margin: 4px 0 10px; }
 }
+
+/* Stay Connected: keep the intro text centred under the heading */
+.krs-section .krs-newsletter-inner p.krs-copy { margin: 0 auto !important; padding: 0 !important; max-width: 560px; text-align: center; }
